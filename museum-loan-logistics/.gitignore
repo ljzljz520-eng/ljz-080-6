@@ -1,0 +1,4 @@
+# 运行时数据（删除后重启会重新生成演示数据）
+data/db.json
+uploads/*
+!uploads/.gitkeep

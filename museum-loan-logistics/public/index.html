@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>博物馆文物借展物流台</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- 登录页 -->
+<div id="loginView" class="login-wrap">
+  <div class="login-card">
+    <div class="brand">
+      <div class="brand-mark">典</div>
+      <div>
+        <h1>文物借展物流台</h1>
+        <p>Museum Loan &amp; Logistics Console</p>
+      </div>
+    </div>
+    <form id="loginForm">
+      <label>账号
+        <input type="text" id="loginUser" autocomplete="username" placeholder="请输入账号" required>
+      </label>
+      <label>密码
+        <input type="password" id="loginPass" autocomplete="current-password" placeholder="请输入密码" required>
+      </label>
+      <button class="btn btn-primary btn-block" type="submit">登 录</button>
+      <div id="loginError" class="form-error"></div>
+    </form>
+    <div class="demo-accounts">
+      <p class="demo-title">演示账号（密码均为 <code>123456</code>），点击可快速填充：</p>
+      <div class="demo-grid">
+        <button type="button" data-u="curator" data-n="陈策展"><b>curator</b><span>策展人 · 发起借展</span></button>
+        <button type="button" data-u="warehouse" data-n="王库房"><b>warehouse</b><span>库房 · 确认装箱</span></button>
+        <button type="button" data-u="logistics" data-n="李运输"><b>logistics</b><span>物流方 · 发运/温湿度/签收</span></button>
+        <button type="button" data-u="museum" data-n="周联络"><b>museum</b><span>外部展馆 · 苏州河美术馆</span></button>
+        <button type="button" data-u="museum2" data-n="赵联络"><b>museum2</b><span>外部展馆 · 临安城市展览馆</span></button>
+        <button type="button" data-u="admin" data-n="系统管理员"><b>admin</b><span>管理员（全流程权限）</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 主应用 -->
+<div id="appView" class="app" hidden>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand-sm">
+        <span class="brand-mark sm">典</span>
+        <div>
+          <strong>文物借展物流台</strong>
+          <span class="brand-sub">借展 · 装箱 · 运输 · 到馆 · 开箱留证全链路</span>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <span id="orgBadge" class="org-badge" hidden></span>
+        <span id="roleBadge" class="role-badge"></span>
+        <span id="userName" class="user-name"></span>
+        <button id="logoutBtn" class="btn btn-ghost btn-sm">退出</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <div>
+        <h2 id="pageTitle">借展单</h2>
+        <p id="pageHint" class="page-hint"></p>
+      </div>
+      <button id="newLoanBtn" class="btn btn-primary" hidden>+ 发起借展</button>
+    </div>
+
+    <div id="loanList" class="loan-grid"></div>
+    <div id="emptyHint" class="empty" hidden>暂无借展单</div>
+  </main>
+</div>
+
+<!-- 通用弹窗 -->
+<div id="modalMask" class="modal-mask" hidden>
+  <div class="modal" id="modalBox">
+    <div class="modal-head">
+      <h3 id="modalTitle"></h3>
+      <button class="modal-close" id="modalClose">×</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- 大图查看 -->
+<div id="lightbox" class="lightbox" hidden>
+  <img id="lightboxImg" alt="开箱照片">
+  <button class="lightbox-close" id="lightboxClose">×</button>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="app.js"></script>
+</body>
+</html>
