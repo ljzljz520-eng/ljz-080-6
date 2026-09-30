@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>博物馆文物借展物流台</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- 登录页 -->
+<div id="login-view" class="login-view hidden">
+  <div class="login-card">
+    <div class="login-brand">
+      <div class="brand-seal">物</div>
+      <div>
+        <h1>文物借展物流台</h1>
+        <p>Museum Loan &amp; Logistics Console</p>
+      </div>
+    </div>
+    <form id="login-form">
+      <label>账号<input type="text" name="username" autocomplete="username" placeholder="请输入账号" required></label>
+      <label>密码<input type="password" name="password" autocomplete="current-password" placeholder="请输入密码" required></label>
+      <div id="login-error" class="form-error hidden"></div>
+      <button type="submit" class="btn btn-primary btn-block">登 录</button>
+    </form>
+    <div class="demo-hint">
+      <p class="demo-hint-title">演示账号（密码均为 demo123）</p>
+      <div class="demo-accounts">
+        <button type="button" data-u="curator" data-p="demo123"><b>curator</b> 策展人 · 发起借展</button>
+        <button type="button" data-u="keeper" data-p="demo123"><b>keeper</b> 库房 · 装箱/发货</button>
+        <button type="button" data-u="logistics" data-p="demo123"><b>logistics</b> 物流 · 温湿度/签收</button>
+        <button type="button" data-u="museum1" data-p="demo123"><b>museum1</b> 苏州吴韵博物馆</button>
+        <button type="button" data-u="museum2" data-p="demo123"><b>museum2</b> 南海海洋文明馆</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 主应用 -->
+<div id="app-view" class="app-view hidden">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-seal small">物</span>
+        <span class="brand-name">文物借展物流台</span>
+      </div>
+      <nav class="topnav">
+        <a href="#/loans" data-route="/loans">借展单</a>
+        <a href="#/new" data-route="/new" id="nav-new" class="hidden">发起借展</a>
+      </nav>
+      <div class="userbox">
+        <span id="user-name" class="user-name"></span>
+        <span id="user-role" class="role-badge"></span>
+        <button id="logout-btn" class="btn btn-ghost btn-sm">退出</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="main"></main>
+</div>
+
+<!-- 弹窗容器 -->
+<div id="modal-root"></div>
+<!-- 图片大图查看 -->
+<div id="lightbox" class="lightbox hidden"><img alt="留痕照片大图"></div>
+<!-- 全局提示 -->
+<div id="toast" class="toast hidden"></div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

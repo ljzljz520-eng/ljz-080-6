@@ -1,0 +1,14 @@
+{
+  "name": "museum-loan-logistics",
+  "version": "1.0.0",
+  "description": "博物馆文物借展物流台：策展人发起、库房装箱、物流温湿度回传与到馆签收、全程开箱留痕，外部展馆数据隔离",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "*",
+    "express-session": "*",
+    "multer": "*"
+  }
+}
